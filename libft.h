@@ -6,13 +6,13 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 00:29:08 by aenshin           #+#    #+#             */
-/*   Updated: 2023/05/21 00:30:41 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/05/21 00:35:22 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-int	isalpha(int c);
+int	ft_isalpha(int c);
 
 #endif
