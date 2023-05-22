@@ -1,5 +1,20 @@
-all:
-	cc -Wall -Wextra -Werror -c ft_*.c
+NAME=libft.a
+OBJECTS:=$(patsubst %.c,%.o,$(wildcard ft_*.c))
+CFLAGS=-Wall -Wextra -Werror
 
-lib: all
-	ar -srv libft.a ft_*.o
+all: $(NAME)
+
+$(NAME): $(OBJECTS)
+	ar -srv $(NAME) $(OBJECTS)
+
+clean:
+	-rm $(OBJECTS)
+
+fclean: clean
+	-rm $(NAME)
+
+re:
+	$(MAKE) fclean
+	$(MAKE) all
+
+.PHONY=all clean fclean re
