@@ -6,11 +6,11 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 22:17:09 by aenshin           #+#    #+#             */
-/*   Updated: 2023/05/23 22:47:29 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/05/23 23:22:29 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <time.h>
+#include <stddef.h>
 
 size_t
 	ft_strlen(const char *s) {
