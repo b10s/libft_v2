@@ -6,7 +6,7 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 23:25:26 by aenshin           #+#    #+#             */
-/*   Updated: 2023/05/23 23:41:09 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/05/23 23:43:51 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void *
 	ft_memset(void *b, int c, size_t len) {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < len)
