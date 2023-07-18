@@ -17,4 +17,7 @@ re:
 	$(MAKE) fclean
 	$(MAKE) all
 
+bonus:
+	echo "TODO!"
+
 .PHONY=all clean fclean re
