@@ -6,7 +6,7 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 00:29:08 by aenshin           #+#    #+#             */
-/*   Updated: 2023/07/18 21:53:09 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/07/18 22:15:51 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+void	ft_lstadd_front(t_list **lst, t_list *new);
+t_list	*ft_lstnew(void *content);
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
