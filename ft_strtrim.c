@@ -6,7 +6,7 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 20:54:08 by aenshin           #+#    #+#             */
-/*   Updated: 2023/07/10 22:30:26 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/07/24 22:18:01 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char *
 	char	*ptr;
 	size_t	len;
 
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	len = ft_strlen(s1);
 	ptr = (char *)s1 + ft_strlen(s1);
 	while (*s1 != '\0' && ft_strchr(set, *s1) != NULL)

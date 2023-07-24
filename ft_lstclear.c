@@ -6,7 +6,7 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 23:01:49 by aenshin           #+#    #+#             */
-/*   Updated: 2023/07/18 23:14:30 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/07/24 22:13:49 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void
 	t_list	*l;
 	t_list	*tmp;
 
-	l = *lst;
-	if (l == NULL)
+	if (lst == NULL || *lst == NULL || del == NULL)
 		return ;
+	l = *lst;
 	while (l->next != NULL)
 	{
 		del(l->content);

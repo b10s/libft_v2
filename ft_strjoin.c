@@ -6,7 +6,7 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 20:33:14 by aenshin           #+#    #+#             */
-/*   Updated: 2023/07/10 20:53:13 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/07/24 22:18:36 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char *
 	size_t	len;
 	char	*res;
 
+	if (s1 == NULL || s1 == NULL)
+		return (NULL);
 	len = ft_strlen(s1);
 	len = len + ft_strlen(s2);
 	res = malloc(len + 1);

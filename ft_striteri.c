@@ -6,14 +6,18 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 19:01:31 by aenshin           #+#    #+#             */
-/*   Updated: 2023/07/17 19:03:45 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/07/24 22:11:35 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "./libft.h"
 
 void
 	ft_striteri(char *s, void (*f)(unsigned int, char*)) {
 	unsigned int	i;
 
+	if (s == NULL)
+		return ;
 	i = 0;
 	while (*s != '\0')
 	{

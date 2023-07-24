@@ -6,7 +6,7 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 19:55:39 by aenshin           #+#    #+#             */
-/*   Updated: 2023/07/10 20:15:09 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/07/24 22:19:12 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char *
 	char	*start_ptr;
 	size_t	i;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	while (*s != '\0' && i < start)
 	{

@@ -6,7 +6,7 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:46:29 by aenshin           #+#    #+#             */
-/*   Updated: 2023/07/12 22:10:20 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/07/24 22:17:23 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char **
 	char	**res;
 	size_t	alen;
 
+	if (s == NULL)
+		return (NULL);
 	alen = get_arr_len(s, c);
 	res = init_arr(alen);
 	res = ft__split(s, alen, c, res);
