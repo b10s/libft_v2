@@ -7,3 +7,5 @@ exe
 libft.a
 main.c
 hexdump.c
+bonus
+*.swo
