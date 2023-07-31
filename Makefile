@@ -24,7 +24,7 @@ $(NAME): $(OBJECTS)
 	ar -srv $(NAME) $?
 
 clean:
-	rm -f $(OBJECTS) $(OBJECTS_BONUS)
+	rm -f $(OBJECTS) $(OBJECTS_BONUS) bonus
 
 fclean: clean
 	rm -f $(NAME)
