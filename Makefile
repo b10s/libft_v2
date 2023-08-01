@@ -16,6 +16,7 @@ SOURCES_BONUS := ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 
 OBJECTS := $(patsubst %.c, %.o, $(SOURCES_PART1) $(SOURCES_PART2))
 OBJECTS_BONUS := $(patsubst %.c, %.o, $(SOURCES_BONUS))
+CC := cc
 CFLAGS := -Wall -Wextra -Werror
 
 all: $(NAME)
@@ -29,30 +30,10 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-re:
-	$(MAKE) fclean
-	$(MAKE) all
+re: fclean all
 
 bonus: $(OBJECTS_BONUS) $(NAME)
 	ar -srv $(NAME) $?
 	touch bonus
 
 .PHONY=all clean fclean re bonus
-
-
-# can i produce empty files for need of Make?
-# doublecheck nor doc for all needed targets
-# should all include bonus or not?
-# explicitly use cc and CLFLAGS
-# remove * and use list of files
-# ensure no relink
-# why we need NAME rule?
-# what is the diff btw clean and fclean?
-# finish rule bonus (ensure if all should include bonus or not)
-# make sure if NAME should include bonus or not
-# what to do with header for bonus? separate one?
-# rename files to make sure they are _bonus.{c,h}
-# make sure additional functions are static in all .c files!
-# move struct to bonus header
-# use struct in split func instead of array (or in libft.h as stated in task desc?)
-# 	reconsider names
