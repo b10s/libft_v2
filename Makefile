@@ -34,6 +34,6 @@ re: fclean all
 
 bonus: $(OBJECTS_BONUS) $(NAME)
 	ar -srv $(NAME) $?
-	touch bonus
+	@touch bonus
 
 .PHONY=all clean fclean re bonus
