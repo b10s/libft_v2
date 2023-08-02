@@ -9,3 +9,5 @@ main.c
 hexdump.c
 bonus
 *.swo
+libft-tester-tokyo/
+libftTester/
