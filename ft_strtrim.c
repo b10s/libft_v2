@@ -6,13 +6,12 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 20:54:08 by aenshin           #+#    #+#             */
-/*   Updated: 2023/07/24 22:18:01 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/08/02 21:39:21 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 char *
 	ft_strtrim(char const *s1, char const *set) {
