@@ -6,14 +6,14 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 16:28:54 by aenshin           #+#    #+#             */
-/*   Updated: 2023/07/17 17:28:29 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/08/03 04:10:26 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-short	int	ft_detect_sign(int n);
-short int	ft_count_future_len(int n);
+static	short	int	ft_detect_sign(int n);
+static	short	int	ft_count_future_len(int n);
 
 char *
 	ft_itoa(int n) {
@@ -43,14 +43,14 @@ char *
 	return (res);
 }
 
-short int
+static short int
 	ft_detect_sign(int n) {
 	if (n < 0)
 		return (1);
 	return (0);
 }
 
-short int
+static short int
 	ft_count_future_len(int n) {
 	short int	res;
 
