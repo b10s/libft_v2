@@ -6,7 +6,7 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 22:42:05 by aenshin           #+#    #+#             */
-/*   Updated: 2023/08/02 21:57:00 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/08/02 22:28:08 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char *
 	if (ft_strlen(needle) == 0)
 		return ((char *)haystack);
 	i = 1;
-	while (i <= len)
+	while (i <= len && *haystack != '\0')
 	{
 		tmp = needle;
 		res = haystack;
