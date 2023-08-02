@@ -6,7 +6,7 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 23:35:01 by aenshin           #+#    #+#             */
-/*   Updated: 2023/07/24 22:26:34 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/08/02 20:47:37 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,14 @@ void *
 	void	*tmp;
 
 	tmp = dst;
+	if (dst == NULL && src == NULL && len != 0)
+		return (NULL);
 	if (src < dst)
 	{
 		dst = dst + len - 1;
 		src = src + len - 1;
 		while (len-- > 0)
-		{
-			*(char *)dst = *(char *)src;
-			dst--;
-			src--;
-		}
+			*(char *)dst-- = *(char *)src--;
 	}
 	else
 	{

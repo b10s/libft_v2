@@ -6,7 +6,7 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 23:26:58 by aenshin           #+#    #+#             */
-/*   Updated: 2023/05/26 00:18:11 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/08/02 20:44:40 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void *
 	{
 		return (dst);
 	}
+	if (dst == NULL && src == NULL)
+		return (NULL);
 	tmp = dst;
 	while (n > 0)
 	{
