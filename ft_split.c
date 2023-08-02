@@ -6,17 +6,17 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:46:29 by aenshin           #+#    #+#             */
-/*   Updated: 2023/08/02 20:40:51 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/08/03 04:09:17 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
 #include <stdlib.h>
 
-char	**init_arr(size_t alen);
-size_t	get_arr_len(char const *s, char c);
-void	free_arr(char **a);
-char	**ft__split(char const *s, size_t alen, char c, char **res);
+static	size_t	get_arr_len(char const *s, char c);
+static	char		**init_arr(size_t alen);
+static	void		free_arr(char **a);
+static	char		**ft__split(char const *s, size_t alen, char c, char **res);
 
 char **
 	ft_split(char const *s, char c) {
@@ -33,7 +33,7 @@ char **
 	return (res);
 }
 
-char **
+static char **
 	ft__split(char const *s, size_t alen, char c, char **res) {
 	size_t	i;
 	char	*ptr;
@@ -62,7 +62,7 @@ char **
 	return (res);
 }
 
-void
+static void
 	free_arr(char **a) {
 	size_t	i;
 
@@ -75,7 +75,7 @@ void
 	free(a);
 }
 
-size_t
+static size_t
 	get_arr_len(char const *s, char c) {
 	size_t	alen;
 	short	w;
@@ -99,7 +99,7 @@ size_t
 
 // creates array of pointer to future strings of the given legth + 1 NULL ptr
 // at the end
-char **
+static char **
 	init_arr(size_t alen) {
 	char	**res;
 	size_t	i;
