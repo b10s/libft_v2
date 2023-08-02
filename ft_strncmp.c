@@ -6,7 +6,7 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 19:15:55 by aenshin           #+#    #+#             */
-/*   Updated: 2023/07/06 21:42:57 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/08/02 21:15:57 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int
 	size_t	i;
 
 	i = 1;
+	if (s1 == NULL || s2 == NULL)
+		return (0);
 	while (*s1 != '\0' && *s2 != '\0' && i <= n)
 	{
 		if (*s1 != *s2)
@@ -31,5 +33,5 @@ int
 		return (0);
 	if (*s1 == '\0')
 		return (-42);
-	return (42);
+	return ((unsigned char)*s1);
 }
