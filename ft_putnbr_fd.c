@@ -6,7 +6,7 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 19:36:56 by aenshin           #+#    #+#             */
-/*   Updated: 2023/07/17 20:14:03 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/08/03 03:02:21 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void
 		uln = -uln;
 	}
 	div = ft_find_divisor(uln);
-	while (uln > 0)
+	while (div > 0)
 	{
 		dig = uln / div;
 		uln = uln % div;
@@ -49,7 +49,7 @@ unsigned long
 	unsigned long	res;
 
 	res = 1;
-	while (n <= res)
+	while (n >= res)
 		res = res * 10;
 	res = res / 10;
 	return (res);
