@@ -6,7 +6,7 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 22:17:09 by aenshin           #+#    #+#             */
-/*   Updated: 2023/05/23 23:22:29 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/08/02 21:42:02 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t
 	ft_strlen(const char *s) {
-	int	res;
+	size_t	res;
 
 	res = 0;
 	while (*s)
