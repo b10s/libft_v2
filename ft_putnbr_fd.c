@@ -6,14 +6,14 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 19:36:56 by aenshin           #+#    #+#             */
-/*   Updated: 2023/08/03 03:02:21 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/08/03 04:12:41 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "./libft.h"
 
-unsigned long	ft_find_divisor(unsigned long n);
+static unsigned long	ft_find_divisor(unsigned long n);
 
 void
 	ft_putnbr_fd(int n, int fd) {
@@ -44,7 +44,7 @@ void
 	}
 }
 
-unsigned long
+static unsigned long
 	ft_find_divisor(unsigned long n) {
 	unsigned long	res;
 
