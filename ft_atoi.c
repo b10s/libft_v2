@@ -6,14 +6,19 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 23:11:17 by aenshin           #+#    #+#             */
-/*   Updated: 2023/07/08 20:41:33 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/08/03 01:51:00 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <limits.h>
+
+int	check_ovf(unsigned long long n, const char *str, short sign);
+int	check_ovf_hlp(unsigned long long n, const char *str, short sign);
+
 int
 	ft_atoi(const char *str) {
-	long int	res;
-	short		sign;
+	unsigned long long	res;
+	short				sign;
 
 	res = 0;
 	sign = 0;
@@ -26,6 +31,8 @@ int
 		str++;
 	while (*str >= '0' && *str <= '9')
 	{
+		if (check_ovf(res, str, sign) != 42)
+			return (check_ovf(res, str, sign));
 		res = res * 10;
 		res = res + (int)(*str - '0');
 		str++;
@@ -33,4 +40,45 @@ int
 	if (sign == 1)
 		res = -res;
 	return ((int)res);
+}
+
+int
+	check_ovf(unsigned long long n, const char *str, short sign) {
+	if (check_ovf_hlp(n, str, sign) != 42)
+		return (check_ovf_hlp(n, str, sign));
+	if (n * 10 > (unsigned long long)LONG_MAX)
+	{
+		if (sign)
+			return ((int)LONG_MIN);
+		return ((int)LONG_MAX);
+	}
+	return (42);
+}
+
+int
+	check_ovf_hlp(unsigned long long n, const char *str, short sign) {
+	long long	mytail;
+	long long	maxtail;
+	long long	mintail;
+
+	maxtail = (unsigned int)LONG_MAX;
+	mintail = maxtail + 1;
+	mytail = (int)(*str - '0');
+	mytail = mytail + (unsigned int)n * 10;
+	if (LONG_MAX - n * 10 < 10)
+	{
+		if (sign)
+		{
+			if (mytail >= mintail)
+				return ((int)LONG_MIN);
+			return ((int)-mytail);
+		}
+		else
+		{
+			if (mytail >= maxtail)
+				return ((int)LONG_MAX);
+			return ((int)mytail);
+		}
+	}
+	return (42);
 }
