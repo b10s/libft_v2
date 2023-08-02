@@ -6,65 +6,112 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:46:29 by aenshin           #+#    #+#             */
-/*   Updated: 2023/07/26 22:32:40 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/08/02 20:40:51 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
 #include <stdlib.h>
 
-void	get_arr_len(char const *s, char c, size_t res[2]);
+char	**init_arr(size_t alen);
+size_t	get_arr_len(char const *s, char c);
+void	free_arr(char **a);
+char	**ft__split(char const *s, size_t alen, char c, char **res);
 
 char **
 	ft_split(char const *s, char c) {
 	char	**res;
-	size_t	wb[2];
-	size_t	w_idx;
-	char	*data_ptr;
+	size_t	alen;
 
 	if (s == NULL)
 		return (NULL);
-	get_arr_len(s, c, wb);
-	res = malloc((wb[0] + 1) * sizeof(char *) + (wb[1] + wb[0]) * sizeof(char));
+	alen = get_arr_len(s, c);
+	res = init_arr(alen);
+	res = ft__split(s, alen, c, res);
 	if (res == NULL)
 		return (NULL);
-	data_ptr = (char *)res + (wb[0] + 1) * sizeof(char *);
-	w_idx = 0;
-	while (*s != '\0' && w_idx < wb[0])
+	return (res);
+}
+
+char **
+	ft__split(char const *s, size_t alen, char c, char **res) {
+	size_t	i;
+	char	*ptr;
+
+	i = 0;
+	while (i < alen && *s != '\0' && s != NULL && res != NULL)
 	{
-		res[w_idx++] = data_ptr;
-		while (*s == (char)c)
+		if (*s == c)
 			s++;
-		while (*s != (char)c)
-			*data_ptr++ = *s++;
-		*data_ptr++ = '\0';
+		else
+		{
+			ptr = ft_strchr(s, c);
+			if (ptr == NULL)
+				res[i] = ft_substr(s, 0, ft_strlen(s));
+			else
+				res[i] = ft_substr(s, 0, ptr - s);
+			if (res[i] == NULL)
+			{
+				free_arr(res);
+				return (NULL);
+			}
+			s = ptr;
+			i++;
+		}
 	}
-	res[w_idx] = NULL;
 	return (res);
 }
 
 void
-	get_arr_len(char const *s, char c, size_t res[2]) {
-	size_t	wcnt;
-	size_t	bcnt;
-	short	wflag;
+	free_arr(char **a) {
+	size_t	i;
 
-	wcnt = 0;
-	bcnt = 0;
-	wflag = 0;
+	i = 0;
+	while (a[i] != NULL)
+	{
+		free(a[i]);
+		i++;
+	}
+	free(a);
+}
+
+size_t
+	get_arr_len(char const *s, char c) {
+	size_t	alen;
+	short	w;
+
+	alen = 0;
+	w = 0;
 	while (*s != '\0')
 	{
 		if (*s == c)
-			wflag = 0;
+			w = 0;
 		else
 		{
-			bcnt++;
-			if (wflag == 0)
-				wcnt++;
-			wflag = 1;
+			if (w == 0)
+				alen++;
+			w = 1;
 		}
 		s++;
 	}
-	res[0] = wcnt;
-	res[1] = bcnt;
+	return (alen);
+}
+
+// creates array of pointer to future strings of the given legth + 1 NULL ptr
+// at the end
+char **
+	init_arr(size_t alen) {
+	char	**res;
+	size_t	i;
+
+	i = 0;
+	res = malloc((sizeof(char *) * alen) + 1);
+	if (res == NULL)
+		return (NULL);
+	while (i < (alen + 1))
+	{
+		res[i] = NULL;
+		i++;
+	}
+	return (res);
 }
