@@ -6,7 +6,7 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 23:25:26 by aenshin           #+#    #+#             */
-/*   Updated: 2023/05/23 23:43:51 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/08/03 03:37:17 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void *
 	i = 0;
 	while (i < len)
 	{
-		*(char *)(b + i) = (unsigned char) c;
+		*(unsigned char *)(b + i) = (unsigned char) c;
 		i++;
 	}
 	return (b);
