@@ -6,14 +6,14 @@
 /*   By: aenshin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 23:11:17 by aenshin           #+#    #+#             */
-/*   Updated: 2023/08/03 01:51:00 by aenshin          ###   ########.fr       */
+/*   Updated: 2023/08/03 04:05:39 by aenshin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
 
-int	check_ovf(unsigned long long n, const char *str, short sign);
-int	check_ovf_hlp(unsigned long long n, const char *str, short sign);
+static int	check_ovf(unsigned long long n, const char *str, short sign);
+static int	check_ovf_hlp(unsigned long long n, const char *str, short sign);
 
 int
 	ft_atoi(const char *str) {
@@ -42,7 +42,7 @@ int
 	return ((int)res);
 }
 
-int
+static int
 	check_ovf(unsigned long long n, const char *str, short sign) {
 	if (check_ovf_hlp(n, str, sign) != 42)
 		return (check_ovf_hlp(n, str, sign));
@@ -55,7 +55,7 @@ int
 	return (42);
 }
 
-int
+static int
 	check_ovf_hlp(unsigned long long n, const char *str, short sign) {
 	long long	mytail;
 	long long	maxtail;
